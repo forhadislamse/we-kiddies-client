@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 const Banner = () => {
     return (
-        <Swiper pagination={true} modules={[Pagination]} className="mySwiper lg:h-[500px]">
+        <Swiper pagination={true} modules={[Pagination]} className="mySwiper lg:h-[600px]">
 
             <SwiperSlide><img src={slider1} alt="" /></SwiperSlide>
             <SwiperSlide><img src={slider2} alt="" /></SwiperSlide>
