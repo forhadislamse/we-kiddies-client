@@ -1,5 +1,6 @@
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MyToysRow = ({ toy, handleDelete }) => {
     const { _id, image, toy_name, seller_name, seller_email, sub_category, Price, Rating, avail_quantity, details } = toy;
@@ -24,12 +25,13 @@ const MyToysRow = ({ toy, handleDelete }) => {
             <td>${avail_quantity}</td>
             <td>${details}</td>
             <th>
-                <button className="btn btn-ghost btn-xs"><FaEdit className="text-2xl"></FaEdit></button>
-                {/* onClick={() => handleBookingConfirm(_id)} */}
+                <button className="btn btn-md "><Link to={`updatetoys/${_id}`}><FaEdit className="text-2xl"></FaEdit>
+                </Link></button>
+
             </th>
 
             <th>
-                <button onClick={() => handleDelete(_id)} className="btn btn-sm btn-circle">
+                <button onClick={() => handleDelete(_id)} className="btn btn-md ">
                     <AiFillDelete className="text-2xl"></AiFillDelete>
                 </button>
 
