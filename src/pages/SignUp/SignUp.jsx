@@ -1,21 +1,21 @@
-// import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { AiFillEye, AiFillEyeInvisible, AiFillGoogleCircle } from "react-icons/ai";
 import { useForm } from 'react-hook-form';
-// import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
-import { Link } from "react-router-dom";
-// import { AuthContext } from '../../providers/AuthProvider';
-// import Swal from 'sweetalert2';
+
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    // const { register, handleSubmit, reset, formState: { errors }, watch } = useForm();
 
-    // const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+    const { createUser, updateUserProfile, logOut, signInWithGoogle } = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -26,32 +26,44 @@ const SignUp = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        // createUser(data.email, data.password)
-        //     .then(result => {
-        //         const loggedUser = result.user;
-        //         console.log(loggedUser);
-        //         updateUserProfile(data.name, data.photoUrl)
-        //             .then(() => {
-        //                 console.log('user profile info updated')
-        //                 reset();
-        //                 Swal.fire({
-        //                     position: 'top-end',
-        //                     icon: 'success',
-        //                     title: 'user created successfully.',
-        //                     showConfirmButton: false,
-        //                     timer: 1000
-        //                 });
-        //                 logOut()
-        //                     .then(() => {
-        //                         navigate('/login');
-        //                     })
-        //                     .catch(error => console.log(error));
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(data.name, data.photoUrl)
+                    .then(() => {
+                        console.log('user profile info updated')
+                        reset();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'user created successfully.',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        logOut()
+                            .then(() => {
+                                navigate('/login');
+                            })
+                            .catch(error => console.log(error));
 
-        //             })
-        //             .catch(error => console.log(error))
-        //     })
+                    })
+                    .catch(error => console.log(error))
+            })
 
     };
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     return (
         <>
             <div className="hero min-h-screen bg-cyan-200 mt-4">
@@ -123,7 +135,7 @@ const SignUp = () => {
                         <p className="text-center py-4 "><small>Already have an account <Link to="/login" className="text-red-500 font-semibold">Login Now</Link></small></p>
                         <div className='text-center'>
                             <p className="divider">OR</p>
-                            <button className=" btn mb-8"><span className='text-xl text-red-400'><AiFillGoogleCircle></AiFillGoogleCircle></span> Login with Google</button>
+                            <button onClick={handleGoogleSignIn} className=" btn mb-8"><span className='text-xl text-red-400'><AiFillGoogleCircle></AiFillGoogleCircle></span> Login with Google</button>
                         </div>
                     </div>
                 </div >

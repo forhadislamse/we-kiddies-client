@@ -1,21 +1,24 @@
-// import { useContext, useState } from 'react';
-import { useState } from 'react';
+
+import { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { AiFillEye, AiFillEyeInvisible, AiFillGoogleCircle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-// import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import { AuthContext } from '../../providers/AuthProvider';
-// import Swal from 'sweetalert2';
+
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+import Swal from 'sweetalert2';
+
+import { AuthContext } from '../../providers/AuthProvider';
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
-    // const { signIn } = useContext(AuthContext);
-    // const navigate = useNavigate();
-    // const location = useLocation();
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    // const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/";
+
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
@@ -23,18 +26,28 @@ const Login = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        // signIn(data.email, data.password)
-        //     .then(result => {
-        //         const user = result.user;
-        //         console.log(user);
-        //         Swal.fire(
-        //             'Good job!',
-        //             'user login successfully!',
-        //             'success'
-        //         )
-        //         navigate(from, { replace: true });
-        //     })
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire(
+                    'Good job!',
+                    'user login successfully!',
+                    'success'
+                )
+                navigate(from, { replace: true });
+            })
     };
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
     return (
         <>
@@ -78,10 +91,10 @@ const Login = () => {
                                 <input className="btn btn-info" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className="text-center py-4 "><small>Don't have an account <Link to="/signup" className="text-red-500 font-semibold">Register Now</Link></small></p>
+                        <p className="text-center py-4 "><small>Do not have an account <Link to="/signup" className="text-red-500 font-semibold">Register Now</Link></small></p>
                         <div className='text-center'>
                             <p className="divider">OR</p>
-                            <button className=" btn mb-8"><span className='text-xl text-red-400'><AiFillGoogleCircle></AiFillGoogleCircle></span> Login with Google</button>
+                            <button onClick={handleGoogleSignIn} className=" btn mb-8"><span className='text-xl text-red-400'><AiFillGoogleCircle></AiFillGoogleCircle></span> Login with Google</button>
                         </div>
                     </div>
                 </div >
