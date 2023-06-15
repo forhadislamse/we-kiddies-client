@@ -1,7 +1,18 @@
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const ToyCard = ({ item }) => {
-    const { image, Price, Rating, toy_name } = item;
+    const { _id, image, Price, Rating, toy_name } = item;
+
+    const handleToast = () => {
+        toast("You have to log in first to view details!");
+
+
+    }
+
     return (
         <div className="mx-auto">
             <div className="card w-96 bg-cyan-100">
@@ -11,8 +22,10 @@ const ToyCard = ({ item }) => {
                     <h2 className="card-title">{toy_name}</h2>
                     <p>Rating:{Rating}</p>
                     <p>Price:${Price}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-outline bg-slate-100  mt-4">View Details</button>
+
+                    <div className='flex '>
+                        <button onClick={() => handleToast()} className=' flex-grow rounded btn btn-outline bg-cyan-100  mt-4'><Link to={`/toys/${_id}`}>View details</Link></button>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>

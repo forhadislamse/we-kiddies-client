@@ -22,7 +22,7 @@ const Testimonials = () => {
 
                 {
                     toys.map(item => <SwiperSlide
-                        key={item.id}
+                        key={item._id}
                     >
                         <div className="flex flex-col items-center ">
 
