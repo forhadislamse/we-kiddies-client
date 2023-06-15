@@ -3,6 +3,7 @@ import SectionTitle from "../../components/SectionTitle";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddToys = () => {
     const { register, handleSubmit } = useForm();
@@ -38,6 +39,11 @@ const AddToys = () => {
     }
     return (
         <div className="w-full px-10">
+            <Helmet>
+                <title>
+                    WeKiddies | Add A Toy
+                </title>
+            </Helmet>
             <SectionTitle heading="Add A Toy" ></SectionTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex my-4">

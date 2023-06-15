@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
 
@@ -65,6 +66,11 @@ const SignUp = () => {
 
     return (
         <>
+            <Helmet>
+                <title>
+                    WeKiddies | Sign Up
+                </title>
+            </Helmet>
             <div className="hero min-h-screen bg-cyan-200 mt-4">
                 <div className="hero-content flex flex-col md:flex-row">
                     <div className="text-center lg:text-left w-full md:w-1/2">
