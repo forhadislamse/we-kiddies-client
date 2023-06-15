@@ -8,8 +8,8 @@
     "sub_category": "lego_cars",
     "Price": 19.99,
     "Rating": 4.5,
-    "Available quantity": 10,
-    "Detail description": "This Lego Cars set includes three different car models and a race track. Perfect for racing enthusiasts!"
+    "avail_quantity": 10,
+    "details": "This Lego Cars set includes three different car models and a race track. Perfect for racing enthusiasts!"
   },
   {
     "id": 2,
@@ -20,8 +20,8 @@
     "sub_category": "lego_cars",
     "Price": 24.99,
     "Rating": 4.8,
-    "Available quantity": 5,
-    "Detail description": "Build your own fleet of Lego Cars with this set. Includes instructions for different car designs."
+    "avail_quantity": 5,
+    "details": "Build your own fleet of Lego Cars with this set. Includes instructions for different car designs."
   },
   {
     "id": 3,
@@ -32,8 +32,8 @@
     "sub_category": "lego_cars",
     "Price": 29.99,
     "Rating": 4.6,
-    "Available quantity": 8,
-    "Detail description": "Create exciting car races with this Lego Cars set. Comes with a starting line and mini figures."
+    "avail_quantity": 8,
+    "details": "Create exciting car races with this Lego Cars set. Comes with a starting line and mini figures."
   },
   {
     "id": 4,
@@ -44,8 +44,8 @@
     "sub_category": "lego_wars",
     "Price": 39.99,
     "Rating": 4.7,
-    "Available quantity": 3,
-    "Detail description": "Engage in epic battles with this Lego Wars set. Build spaceships, create your own storylines, and save the galaxy!"
+    "avail_quantity": 3,
+    "details": "Engage in epic battles with this Lego Wars set. Build spaceships, create your own storylines, and save the galaxy!"
   },
   {
     "id": 5,
@@ -56,8 +56,8 @@
     "sub_category": "lego_wars",
     "Price": 34.99,
     "Rating": 4.9,
-    "Available quantity": 6,
-    "Detail description": "Join the intergalactic adventure with this Lego Wars set. Includes mini figures and customizable starships."
+    "avail_quantity": 6,
+    "details": "Join the intergalactic adventure with this Lego Wars set. Includes mini figures and customizable starships."
   },
   {
     "id": 6,
@@ -68,8 +68,8 @@
     "sub_category": "lego_wars",
     "Price": 44.99,
     "Rating": 4.8,
-    "Available quantity": 4,
-    "Detail description": "Fight for supremacy in the Lego Wars universe. Build armies, create battles, and conquer the galaxy!"
+    "avail_quantity": 4,
+    "details": "Fight for supremacy in the Lego Wars universe. Build armies, create battles, and conquer the galaxy!"
   },
   {
     "id": 7,
@@ -80,8 +80,8 @@
     "sub_category": "lego_city",
     "Price": 29.99,
     "Rating": 4.4,
-    "Available quantity": 12,
-    "Detail description": "Immerse yourself in the bustling Lego City with this set. Build skyscrapers, vehicles, and create your own city adventures!"
+    "avail_quantity": 12,
+    "details": "Immerse yourself in the bustling Lego City with this set. Build skyscrapers, vehicles, and create your own city adventures!"
   },
   {
     "id": 8,
@@ -92,8 +92,8 @@
     "sub_category": "lego_city",
     "Price": 34.99,
     "Rating": 4.7,
-    "Available quantity": 8,
-    "Detail description": "Build a vibrant Lego City with this set. Includes mini figures, buildings, and accessories for endless creative play."
+    "avail_quantity": 8,
+    "details": "Build a vibrant Lego City with this set. Includes mini figures, buildings, and accessories for endless creative play."
   },
   {
     "id": 9,
@@ -104,7 +104,7 @@
     "sub_category": "lego_city",
     "Price": 39.99,
     "Rating": 4.6,
-    "Available quantity": 6,
-    "Detail description": "Embark on exciting adventures in Lego City with this set. Features police stations, fire stations, and various vehicles."
+    "avail_quantity": 6,
+    "details": "Embark on exciting adventures in Lego City with this set. Features police stations, fire stations, and various vehicles."
   }
 ]
