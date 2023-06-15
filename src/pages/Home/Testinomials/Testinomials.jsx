@@ -27,7 +27,7 @@ const Testimonials = () => {
                         <div className="flex flex-col items-center ">
 
                             <p className="py-8">{item.details}</p>
-                            <h3 className="text-2xl text-orange-400">{item.seller_name}</h3>
+                            <h3 className="text-2xl text-cyan-400">{item.seller_name}</h3>
                         </div>
                     </SwiperSlide>)
                 }

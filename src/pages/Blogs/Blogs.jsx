@@ -1,7 +1,13 @@
+import { Helmet } from "react-helmet-async";
 
 const Blogs = () => {
     return (
         <div className="join join-vertical w-full mt-4">
+            <Helmet>
+                <title>
+                    WeKiddies | Blogs
+                </title>
+            </Helmet>
             <div className="collapse collapse-arrow join-item border border-base-300">
                 <input type="radio" name="my-accordion-4" checked="checked" />
                 <div className="collapse-title text-xl font-medium">
