@@ -21,8 +21,7 @@ const SignUp = () => {
         setShowPassword(!showPassword);
     };
 
-    // const password = React.useRef({});
-    // password.current = watch('password', '');
+
 
     const onSubmit = (data) => {
         console.log(data);
