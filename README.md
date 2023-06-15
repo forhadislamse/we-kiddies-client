@@ -1,16 +1,16 @@
  ### [live-link] (https://we-kiddies.web.app)
 
-# [packages uses:]
+#### packages uses:
 - [sweetalert2](https://sweetalert2.github.io/)
 - [react-router](https://reactrouter.com/) 
-- [React-Toastify]
+- [React-Toastify](https://www.npmjs.com/package/react-tabs)
 - [express.js](https://expressjs.com/) 
 - [nodemon-package](https://www.npmjs.com/package/nodemon) 
 - [swiper.js](https://swiperjs.com/get-started)
-- [react-icons]
-- [react-helmet-async]
-- [tailwind css]
-- [daisyUI]
-- [react-tabs]
-- [react-hook-form]
-- [react-router-dom]
+- [react-icons](https://www.npmjs.com/package/react-tabs)
+- [react-helmet-async](https://www.npmjs.com/package/react-tabs)
+- [tailwind css](https://www.npmjs.com/package/react-tabs)
+- [daisyUI](https://www.npmjs.com/package/react-tabs)
+- [react-tabs](https://www.npmjs.com/package/react-tabs)
+- [react-hook-form](https://www.react-hook-form.com/)
+- [react-router-dom](https://reactrouter.com/en/main)

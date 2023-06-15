@@ -8,7 +8,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
 
-    const url = `http://localhost:5000/toys?email=${user?.email}`;
+    const url = `https://we-kiddies-server.vercel.app/toys?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -26,7 +26,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toys/${id}`, {
+                fetch(`https://we-kiddies-server.vercel.app/toys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -35,7 +35,7 @@ const MyToys = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'Your Coffee has been deleted.',
+                                'Your Toy has been deleted.',
                                 'success'
                             )
                             const remaining = toys.filter(toy => toy._id !== id);
